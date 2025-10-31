@@ -22,7 +22,7 @@ After the image is built, the application will be served on the link: `http://lo
 
 Then, all you need to do is start the queue with the command below, and the app is ready to be used:
 ```shell
-./vendor/bin/sail artisan queue:start
+./vendor/bin/sail artisan queue:work
 ```
 
 If you ever have to run the command individually:
