@@ -1,7 +1,18 @@
 # Testello
 
 ## To build the env
-First, start your docker machine and build the component by running the command below:
+Before anything else, run command bellow to use a docker container to install the needed PHP dependencies for the project
+(ensure the folder have enough permissions set):
+```shell
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php83-composer:latest \
+    composer install --ignore-platform-reqs
+```
+With the dependencies installed, we can start the docker machine and build
+the container by running the command below:
 
 ```shell
 ./vendor/bin/sail up -d
